@@ -1,10 +1,11 @@
-# Welcome to the RobiS Robot Documentation
+# Welcome to the RobiX Robot Documentation
 
 This site contains the complete user manual for the RobiS autonomous robot platform, including setup, remote access, navigation, and autonomous driving support.
 
 ---
 
 ## 📦 Getting Started
+
 - [Product Introduction](getting-started/introduction.md)
 - [Remote Control Setup](getting-started/remote-control.md)
 - [Remote Desktop Login](getting-started/remote-login.md)
@@ -12,14 +13,14 @@ This site contains the complete user manual for the RobiS autonomous robot platf
 ## 🚗 Navigation with ROS
 
 - [Driver Startup Guide](navigation/ros-startup.md)
-- [2D LiDAR Mapping](navigation/lidar-mapping.md)
-- [2D LiDAR Navigation (AMCL)](navigation/lidar-navigation.md)
+- [Autoware 3D Slam](navigation/Autoware.md)
+- [Karto 2D Navigation](navigation/lidar-navigation.md)
 - [Cartographer Mapping & Navigation](navigation/cartographer.md)
 - [Depth Camera Setup](navigation/depth-camera.md)
 
-## 🤖 Autoware Autonomous Mode
+<!-- ## 🤖 Autoware Autonomous Mode
 
-- [3D SLAM & Navigation](autoware/3d-navigation.md)
+- [3D SLAM & Navigation](autoware/3d-navigation.md) -->
 
 
 ## 🛠️ FAQ & Troubleshooting

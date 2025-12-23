@@ -84,7 +84,7 @@ After finishing point cloud recording, click **Start Trajectory Recording**. The
    <p align="center">
    <img src="../../imgs/a5.png" alt="PS2 Switch" width="400"/>
    </p>
-If positioning seems off, use **2D Pose Estimate** in RViz to manually align.
+   If positioning seems off, use **2D Pose Estimate** in RViz to manually align.
 
 ---
 

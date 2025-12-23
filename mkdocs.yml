@@ -1,15 +1,37 @@
-# site_name: My Docs
-extra_css:
-  - assets/custom.css
+# 站点信息
+site_name: RobiX Robot Manual
+# site_url: https://your-domain.github.io/  # 按需修改
 
-site_name: RobiS Robot Manual
+# 主题配置
 theme:
   name: material
+  language: en
+  palette:
 
-theme:
-  name: readthedocs
+    # 1) 默认就是暗黑模式
+    - scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-sunny   # 右上角显示太阳图标
+        name: 切换到明亮模式
 
+    # 2) 用户点击后切换到明亮模式
+    - scheme: default
+      primary: white
+      accent: teal
+      toggle:
+        icon: material/weather-night   # 右上角显示月亮图标
+        name: 切换到暗黑模式
 
+  features:
+    - navigation.tabs               # 顶部标签
+    - navigation.top                # 回到顶部按钮
+    - content.code.annotate         # 代码块注解
+    - content.action.edit           # 编辑此页（GitHub 需配 repo_url）
+    - navigation.expand
+
+# 导航结构（保持你原来的）
 nav:
   - Home: index.md
   - Getting Started:
@@ -18,20 +40,26 @@ nav:
       - Remote Login: getting-started/remote-login.md
   - ROS Navigation:
       - Driver Startup: navigation/ros-startup.md
-      - 2D LiDAR Mapping: navigation/lidar-mapping.md
-      - 2D Navigation: navigation/lidar-navigation.md
-      - Cartographer Navigation: navigation/cartographer.md
+      - Autoware 3D Slam: navigation/Autoware.md
+      - Karto 2D Navigation: navigation/lidar-navigation.md
+      - Cartographer Mapping & Navigation: navigation/cartographer.md
       - Depth Camera: navigation/depth-camera.md
-  - Autoware:
-      - 3D SLAM & Navigation: autoware/3d-navigation.md
-
+  # - Autoware:
+  #     - 3D SLAM & Navigation: autoware/3d-navigation.md
   - FAQ: faq.md
 
+# Markdown 扩展
 markdown_extensions:
   - admonition
   - pymdownx.superfences
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.details
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - footnotes
   - attr_list
+
+# 自定义样式（可选）
+extra_css:
+  - assets/custom.css

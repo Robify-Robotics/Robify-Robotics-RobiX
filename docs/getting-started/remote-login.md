@@ -1,6 +1,6 @@
 # 🖥️ Remote Login (NoMachine)
 
-Remotely access the RobiS robot using the built-in NoMachine server.
+Remotely access the RobiX robot using the built-in NoMachine server.
 
 ## ✅ Default Credentials
 

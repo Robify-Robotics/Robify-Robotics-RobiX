@@ -1,47 +1,148 @@
-# 🛠️ Chassis and LiDAR Driver Startup
+# 🛠️ Initialization of chassis and sensor drivers
 
 Before using other functions of the RobiS robot, it's necessary to activate essential hardware modules such as the chassis drive, LiDAR, and IMU.
 
 ---
 
-## 🚀 Start All Core Drivers
+## 🔧 Starting the Chassis & Sensor Drivers
 
-To start all key drivers in one terminal, run the following command:
+### 🚀 Bring up all chassis and sensor data
 
-```bash
-roslaunch robot_start robot_start.launch
+Open a new terminal and run:
+
+```
+roslaunch my_control run_device_only.launch
 ```
 
-If successful, the robot's chassis and sensors will initialize correctly and begin publishing data.
-   <p align="center">
-   <img src="../../imgs/image16.png" alt="button" width="400"/>
+<p align="center">
+   <img src="../../imgs/e1.png" alt="button" width="400"/>
    </p>
+
+Verify the data stream:
+
+```
+rostopic echo /four_wheel_info
+```
+
+<p align="center">
+   <img src="../../imgs/e2.png" alt="button" width="400"/>
+   </p>
+
+------
+
+### 📷 Start the depth camera
+
+New terminal:
+
+```
+roslaunch astra_camera astra_pro.launch
+```
+
+<p align="center">
+   <img src="../../imgs/e3.png" alt="button" width="400"/>
+   </p>
+
+Visualise in RViz:
+
+```
+rviz
+```
+
+- Click **Add** → **By topic** → pick the camera image topic.
+
+<p align="center">
+   <img src="../../imgs/e4.png" alt="button" width="400"/>
+   </p>
+
+- In the image drop-down you can switch between depth, RGB or IR.
+
+<p align="center">
+   <img src="../../imgs/e5.png" alt="button" width="400"/>
+   </p>
+
+------
+
+### 📡 Start the LiDAR
+
+New terminal:
+
+```
+roslaunch vanjee_lidar_sdk start.launch
+```
+
+<p align="center">
+   <img src="../../imgs/e6.png" alt="button" width="400"/>
+   </p>
+
+In RViz set the display **Type** to *XYOrbit* for a 3-D point-cloud view.
+
+<p align="center">
+   <img src="../../imgs/e7.png" alt="button" width="400"/>
+   </p>
+
+------
+
+### 🧭 Start the IMU
+
+New terminal:
+
+```
+roslaunch fdilink_ahrs ahrs_data.launch
+```
+
+<p align="center">
+   <img src="../../imgs/e8.png" alt="button" width="400"/>
+   </p>
+
+Check the stream:
+
+```
+rostopic echo /robot_imu
+```
+
+<p align="center">
+   <img src="../../imgs/e9.png" alt="button" width="400"/>
+   </p>
+
+------
+
+### 🚗 Start the chassis node
+
+New terminal:
+
+```
+roslaunch four_wheel four_wheel.launch
+```
+
+<p align="center">
+   <img src="../../imgs/e10.png" alt="button" width="400"/>
+   </p>
+
+Send a motion command (example):
+
+```
+rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+  x: 0.2
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" -r 10
+```
+
+<p align="center">
+   <img src="../../imgs/e11.png" alt="button" width="400"/>
+   </p>
+**⚠️ Before hitting ENTER**
+
+- Confirm the remote is in **PC-mode** (SWB middle).
+- Make sure the **red e-stop is released** (SWD down).
+
 ---
 
-## 🧩 Start Drivers Individually
+Please refer to the accompanying video.
 
-If you need to start each component separately (e.g., for debugging or selective usage), use the following commands in separate terminals:
-
-### 🔄 Chassis Drive Only
-
-```bash
-roslaunch car_control car_control.launch
-```
-
-### 📡 LiDAR Sensor Only
-
-```bash
-roslaunch rplidar_ros rplidar_c1.launch
-```
-
-### 🧭 IMU Sensor Only
-
-```bash
-roslaunch TransducerM_pkg imu.launch
-```
-
-> 💡 **Tip:** Use `rqt_graph` or `rostopic list` to verify whether nodes are running and topics are being published.
-
----
-
-Once the drivers are active, you can proceed to 2D mapping, navigation, or autonomous operations.
+ <video controls width="600">
+   <source src="../../imgs/p2.chassis_imu_info.mp4" type="video/mp4">
+ </video>

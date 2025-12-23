@@ -1,57 +1,46 @@
-# 🎮 Remote Control Setup for RobiS Robot
-
-This section describes how to use the remote controller to operate your RobiS robot.
-Remote control system includes a onboard receiver and a PS2 joystick remote controller, they both have red and green indicator lights. 
-
-The joystick button description
-
-## 🔌 Step-by-Step Instructions
-
-**Power On**  
-   
-   Turn on the robot by pressing the power button.
+# 🎮 Remote Control Setup for RobiX Robot
 
 
-**Switch on the controller**
-   <p align="center">
-   <img src="../../imgs/image2.png" alt="PS2 Switch" width="400"/>
+
+##  Remote-Control Quick Guide
+
+### ⚠️ Safety Notes
+1. **First-use check**:  
+   - After unboxing, raise the chassis so all wheels are off the ground.  
+   - Power on, press the red e-stop and verify it cuts motor drive.  
+   - Only lower the chassis when no abnormal noise or vibration is heard.
+2. **Charging**:  
+   - Shut the chassis down, press the e-stop, and use only the supplied charger.
+3. **Crowded / tight spaces**:  
+   - Select low-speed gear before moving.
+4. **First stick movement after unlocking**:  
+   - Move the **right stick LEFT / RIGHT only** (differential turn) to confirm response.  
+   - Only then push the stick forward / backward.
+
+<p align="center">
+   <img src="../../imgs/e0.jpg" alt="button" width="400"/>
    </p>
-   <p align="center">
-   <img src="../../imgs/image3.png" alt="PS2 Switch" width="400"/>
-   </p>
-Both solid red and green lights indicate a successful connection.
 
- 
+---
 
-**Unlock Remote Control Mode**  
-   <p align="center">
-   <img src="../../imgs/image1.png" alt="PS2 Controller Diagram" width="400"/>
-   </p>
-   Every time after turning on the robot power, remote control needs to be unlocked.
-   - Press the `Mode` button.
-   - Then press `START` to activate remote control mode.
+### 🕹️ Basic Operation
+| **Stick / Switch**           | **Function**   | **Description**                                              |
+| ---------------------------- | -------------- | ------------------------------------------------------------ |
+| **Left stick ↑**             | Forward        | Drive forward                                                |
+| **Left stick ↓**             | Backward       | Drive backward                                               |
+| **Right stick ←**            | Turn left      | Differential left turn                                       |
+| **Right stick →**            | Turn right     | Differential right turn                                      |
+| **SWB (up · middle · down)** | Control source | **Up**: None (auto-charge on dock-capable units) <br> **Middle**: PC / autopilot <br> **Down**: Radio control |
+| **SWA (up · down)**          | Speed limit    | **Up**: Full speed <br> **Down**: Half speed                 |
+| **SWC (any)**                | —              | No function                                                  |
+| **SWD (up · down)**          | Emergency stop | **Up**: Activate e-stop <br> **Down**: Release e-stop        |
+| **Power buttons**            | TX power       | Long-press **both** to turn remote on / off                  |
+| **VRA / VRB**                | —              | No function                                                  |
 
-**Controls Overview**
+---
 
-| Button/Joystick     | Function                                 |
-|---------------------|------------------------------------------|
-| Mode                | Wake up / exit sleep                     |
-| START               | Enter remote control mode                |
-| Left joystick       | Move robot forward/backward              |
-| Right joystick      | Rotate robot left/right                  |
-| L1                  | Increase speed (max 1.5 m/s)             |
-| L2                  | Decrease speed (min 0)                   |
-| Remote Indicator    | Flashing = pairing, Solid = connected    |
+### 🔧 Bumper & Audible Alerts
+- **Bumper triggered** → press & release red e-stop **or** toggle SWD ↑ then ↓ to resume.  
+- **Continuous beep** after power-on idle → jog any stick or power-cycle; also check battery level.
 
-> 💡 Other buttons currently have no assigned function.
-
-## 🛑 Sleep Mode
-
-- If unused for 5 minutes, the controller enters sleep.
-- To wake it up, press the **Mode** button then press **Start** to unlock.
-
-## ⚠️ Usage Precautions
-
-- Ensure the remote controller receiver is plugged into the robot.
-- Install batteries with correct polarity.
-- When using multiple robots, match them **one-by-one** to avoid cross-control.
+Keep SWA–D in the **down** position for safe manual driving.
